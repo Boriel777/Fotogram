@@ -57,7 +57,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    padding: 100px 15px;
+    padding: 100px 50px;
 }
 
 ::backdrop {
