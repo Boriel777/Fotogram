@@ -57,7 +57,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    padding: 100px 0;
+    padding: 100px 15px;
 }
 
 ::backdrop {
@@ -89,7 +89,8 @@ main {
 }
 
 #lightbox {
-    position: relative;
+    box-sizing: content-box;
+    margin-top: 5%;
     align-self: center;
     justify-self: center;
     border: none;
@@ -159,9 +160,47 @@ button#closeDialog:hover {
     text-shadow: 0 0 5px #fff;
 }
 
+#closeDialog:focus:not(:focus-visible) {
+    outline: none;
+}
+
 /* == Section Gallery Styles END == */
 
 /*main styles END*/
 
 /*footer styles*/
+
+.main_footer {
+    padding: 50px 0;
+    background-color: var(--primary-color-l);
+}
+
+.footer_nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: var(--content-width-lock);
+}
+
+.footer_nav a {
+    text-decoration: none;
+    font-size: var(--font-size-large);
+    transition: var(--transition-fast);
+}
+
+.footer_nav a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    transform: scale(1.025);
+}
+
+.copyright {
+    display: block;
+    position: relative;
+    font-size: var(--font-size-small);
+    color: rgba(242, 242, 248, 0.25);
+    justify-self: end;
+    margin-right: 5%;
+}
+
 /*footer styles END*/
