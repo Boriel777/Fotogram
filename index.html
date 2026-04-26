@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,28 +11,53 @@
     <link rel="stylesheet" href="./links/font-face.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body>
-<header>
-Menu here
-</header>
-<main>
-<section id="Title">
-<h1>Pongauer Augenblicke <br> <span class="deco-font">Fotografie zwischen Alpen und Tal</span></h1>
-<p>Landschaftsfotografie aus dem Salzburger Pongau – Naturaufnahmen mit Nikon, 
-eingefangen zwischen Berggipfeln, Tälern und wechselndem Alpenlicht.</p>
-</section>
-<section id="Gallery">
 
-</section>
-</main>
-<footer>
-<nav>
-    <a href="./pages/impressum.html">Impressum</a>
-    <a href="./pages/datenschutz.html">Datenschutz</a>
-</nav>
-© 2026 - Dalibor Durbas - Boriel Designs
-</footer>
+<body>
+    <header class="main_header">
+        <a class="header_logo" href="#"><img src="./icons/camera-retro-solid-full.svg" alt="page logo"><span class="logo_text">Pongauer Augenblicke</span></a>
+    </header>
+    <main>
+        <section id="Title">
+            <h1>Pongauer Augenblicke <br> <span class="deco-font">Fotografie zwischen Alpen und Tal</span></h1>
+            <p>Landschaftsfotografie aus dem Salzburger Pongau – Naturaufnahmen mit Nikon,
+                eingefangen zwischen Berggipfeln, Tälern und wechselndem Alpenlicht.</p>
+        </section>
+        <section id="Gallery">
+            <div id="galleryWrapper"></div>
+            <dialog id="lightbox" onclick="closeLightbox()">
+                <div id="propagation_guard" onclick="event.stopPropagation()">
+                    <header>
+                        <button id="closeDialog" onclick="closeLightbox()">x</button>
+                    </header>
+                    <section>
+                        <img id="lightboxImg" src="" alt="">
+                    </section>
+                    <footer>
+                        <nav class="lightbox_pag">
+                            <button class="nav_btn" id="pagStart" onclick="galleryPagStart()"><img
+                                    src="./icons/angles-left-solid-full.svg" class="to_start_btn"></button>
+                            <button class="nav_btn" id="pagPrev" onclick="galleryPagPrev()"><img
+                                    src="./icons/angle-left-solid-full.svg" class="prev_btn"></button>
+                            <p><span id="currentImg"></span> / <span id="totalImg"></span></p>
+                            <button class="nav_btn" id="pagNext" onclick="galleryPagNext()"><img
+                                    src="./icons/angle-right-solid-full.svg" class="next_btn"></button>
+                            <button class="nav_btn" id="pagEnd" onclick="galleryPagEnd()"><img
+                                    src="./icons/angles-right-solid-full.svg" class="to_end_btn"></button>
+                        </nav>
+                    </footer>
+                </div>
+            </dialog>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="./pages/impressum.html">Impressum</a>
+            <a href="./pages/datenschutz.html">Datenschutz</a>
+        </nav>
+        © 2026 - Dalibor Durbas - Boriel Designs
+    </footer>
 </body>
 <script src="./js/script.js"></script>
 <script src="./js/gallery.js"></script>
+
 </html>

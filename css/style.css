@@ -1,6 +1,36 @@
 /*header styles*/
 
+.main_header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    background: var(--primary-color-l);
+    box-shadow: 0 0 15px var(--light-shadow-h);
+    padding: 10px 5%;
+    z-index: 99999;
+}
 
+.header_logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.header_logo:hover {
+    transform: scale(1.05);
+}
+
+.header_logo img {
+    width: 40px;
+}
+
+.logo_text {
+    font-family: var(--display-font);
+    font-size: 24px;
+}
 
 /*header styles END*/
 
@@ -8,7 +38,7 @@
 
 main {
     max-width: var(--content-width-lock);
-    margin: 0 auto;
+    margin: 150px auto;
     text-align: center;
 }
 
@@ -30,6 +60,10 @@ main {
     padding: 100px 0;
 }
 
+::backdrop {
+    background: var(--backdrop-color);
+}
+
 .galleryImg {
     width: 180px;
     aspect-ratio: 3 / 2;
@@ -37,11 +71,92 @@ main {
     border: 3px solid var(--primary-color-l);
     border-radius: 5%;
     cursor: pointer;
-    transition: all .125s ease-in-out;
+    transition: var(--transition-fast);
 }
 
 .galleryImg:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    border: 3px solid var(--secondary-color);
+    box-shadow: 0 0 15px var(--secondary-color);
+}
+
+/* dialog Styles */
+
+#propagation_guard {
+    border-radius: 35px;
+    padding: 50px;
+    transition: var(--transition-medium);
+}
+
+#lightbox {
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    border: none;
+    overflow: hidden;
+    box-shadow: var(--light-shadow);
+    border-radius: 35px;
+    background-color: var(--primary-color-l);
+
+}
+
+#lightboxImg {
+    height: 70dvh;
+    aspect-ratio: auto;
+    transition: var(--transition-medium);
+}
+
+/* dialog footer Styles */
+
+.lightbox_pag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--primary-color-b);
+    font-size: 20px;
+}
+
+.nav_btn {
+    background: none;
+    border: none;
+    height: fit-content;
+}
+
+.nav_btn img {
+    width: 25px;
+    height: auto;
+    transition: var(--transition-fast);
+}
+
+#pagPrev img,
+#pagNext img {
+    width: 35px;
+}
+
+.nav_btn img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    filter: drop-shadow(var(--light-shadow-h));
+}
+
+button#closeDialog {
+    display: block;
+    position: absolute;
+    right: 22px;
+    top: 8px;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 35px;
+    cursor: pointer;
+    transform: scaleY(0.8);
+    transition: var(--transition-fast);
+    z-index: 9999;
+}
+
+button#closeDialog:hover {
+    transform: scale(1.2, 1);
+    text-shadow: 0 0 5px #fff;
 }
 
 /* == Section Gallery Styles END == */

@@ -17,15 +17,73 @@ const images = [
     "./img/DSC_13.jpg",
 ]
 
+let currentImgIndex = 0;
+
 // dynamic Gallery generator function
 
 function renderGallery() {
-    let container = document.getElementById('Gallery');
-    container.innerHTML = `<div id="galleryWrapper"></div>`;
     let wrapper = document.getElementById('galleryWrapper');
     for (let i = 0; i < images.length; i++) {
-        wrapper.innerHTML += `<img class="galleryImg" src="${images[i]}">`
+        wrapper.innerHTML += `<img class="galleryImg" onclick="lightboxGallery(${i})" src="${images[i]}">`
     };
 }
 
 window.onload = renderGallery;
+
+// lightbox function
+
+function lightboxGallery(i) {
+    currentImgIndex = i;
+    let dialog = document.getElementById('lightbox');
+    dialog.showModal();
+    updateLightbox();
+    currentImg.textContent = currentImgIndex + 1;
+    totalImg.textContent = images.length
+}
+
+function closeLightbox() {
+    let dialog = document.getElementById('lightbox');
+    dialog.close();
+}
+
+// lightbox navigation
+
+function updateLightbox() {
+    let dialogImg = document.getElementById('lightboxImg');
+    let currentImg = document.getElementById('currentImg');
+    let lightbox = document.getElementById('propagation_guard');
+    dialogImg.style.opacity = '0';
+    setTimeout(() => {
+    dialogImg.src = images[currentImgIndex];
+    currentImg.textContent = currentImgIndex + 1;
+    dialogImg.onload = () => {
+        lightbox.style.width = dialogImg.offsetWidth + 'px';
+        dialogImg.style.opacity = '1';
+    };
+    }, 215);
+}
+
+function galleryPagStart() {
+    currentImgIndex = 0;
+    updateLightbox();
+};
+
+function galleryPagEnd() {
+    currentImgIndex = images.length -1;
+    updateLightbox();
+};
+
+function galleryPagNext() {
+    if (currentImgIndex >= images.length -1) {return};
+    currentImgIndex++;
+    updateLightbox();
+};
+
+function galleryPagPrev() {
+    if (currentImgIndex <= 0) {
+        return
+    };
+    currentImgIndex--;
+    updateLightbox();
+};
+
