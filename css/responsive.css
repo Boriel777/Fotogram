@@ -3,6 +3,7 @@
 @media screen and (max-width: 1439px){
 
     main {
+        width: 100%;
         padding: 0 1.5rem;
     }
 
@@ -33,7 +34,7 @@
     max-width: 85dvw;
     max-height: 80dvh;
     height: auto;
-    width: auto;
+    width: 100%;
 }
 
 }

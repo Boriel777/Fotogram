@@ -37,6 +37,7 @@
 /*main styles*/
 
 main {
+    flex: 1;
     max-width: var(--content-width-lock);
     margin: 150px auto;
     text-align: center;
@@ -171,15 +172,21 @@ button#closeDialog:hover {
 /*footer styles*/
 
 .main_footer {
+    width: 100%;
     padding: 50px 0;
     background-color: var(--primary-color-l);
 }
 
-.footer_nav {
+.footer_nav ul{
     display: flex;
     justify-content: center;
     gap: 25px;
+    margin: 0 auto;
     max-width: var(--content-width-lock);
+}
+
+.footer_nav li {
+    list-style-type: none;
 }
 
 .footer_nav a {

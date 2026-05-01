@@ -51,6 +51,12 @@ html {
     font-size: 14px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
 h1 {
     font-family: var(--display-font);
     font-size: var(--font-size-h1);
