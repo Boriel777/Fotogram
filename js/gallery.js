@@ -53,13 +53,23 @@ const imgAlt = [
 
 let currentImgIndex = 0;
 
+function handleGalleryKey(event, i) {
+    if (event.key==='Enter'|| event.key === '') {
+        event.preventDefault();
+        lightboxGallery(i)
+    }
+};
+
 // dynamic Gallery generator function
 
 function renderGallery() {
     let wrapper = document.getElementById('galleryWrapper');
     let galleryHTML = '';
     for (let i = 0; i < images.length; i++) {
-        galleryHTML += `<img class="galleryImg" loading="lazy" onclick="lightboxGallery(${i})" src="${compressedImages[i]}" alt="${imgAlt[i]}">`
+        galleryHTML += `<img class="galleryImg" role="button" loading="lazy" tabindex="0" 
+        onclick="lightboxGallery(${i})" 
+        onkeydown="handleGalleryKey(event, ${i})" 
+        src="${compressedImages[i]}" alt="${imgAlt[i]}">`
     };
     wrapper.innerHTML = galleryHTML;
 }
@@ -89,12 +99,12 @@ function updateLightbox() {
     let currentImg = document.getElementById('currentImg');
     dialogImg.style.opacity = '0';
     setTimeout(() => {
-    dialogImg.src = images[currentImgIndex];
-    dialogImg.alt = imgAlt[currentImgIndex];
-    currentImg.textContent = currentImgIndex + 1;
-    dialogImg.onload = () => {
-        dialogImg.style.opacity = '1';
-    };
+        dialogImg.src = images[currentImgIndex];
+        dialogImg.alt = imgAlt[currentImgIndex];
+        currentImg.textContent = currentImgIndex + 1;
+        dialogImg.onload = () => {
+            dialogImg.style.opacity = '1';
+        };
     }, 215);
 }
 
@@ -104,12 +114,12 @@ function galleryPagStart() {
 };
 
 function galleryPagEnd() {
-    currentImgIndex = images.length -1;
+    currentImgIndex = images.length - 1;
     updateLightbox();
 };
 
 function galleryPagNext() {
-    if (currentImgIndex >= images.length -1) {return};
+    if (currentImgIndex >= images.length - 1) { return };
     currentImgIndex++;
     updateLightbox();
 };

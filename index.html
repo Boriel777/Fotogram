@@ -14,7 +14,8 @@
 
 <body>
     <header class="main_header">
-        <a class="header_logo" href="./index.html"><img src="./icons/camera-retro-solid-full.svg" alt="page logo"><span class="logo_text">Pongauer Augenblicke</span></a>
+        <a class="header_logo" href="./index.html"><img src="./icons/camera-retro-solid-full.svg" alt="page logo"><span
+                class="logo_text">Pongauer Augenblicke</span></a>
     </header>
     <main>
         <section id="Title">
@@ -22,27 +23,27 @@
             <p>Landschaftsfotografie aus dem Salzburger Pongau – Naturaufnahmen mit Nikon,
                 eingefangen zwischen Berggipfeln, Tälern und wechselndem Alpenlicht.</p>
         </section>
-        <section id="Gallery">
+        <section id="Gallery" aria-label="Fotogalerie">
             <div id="galleryWrapper"></div>
-            <dialog id="lightbox" onclick="closeLightbox()">
+            <dialog id="lightbox" aria-modal="true" aria-label="Bildvorschau" onclick="closeLightbox()">
                 <div id="propagation_guard" onclick="event.stopPropagation()">
                     <header>
-                        <button id="closeDialog" onclick="closeLightbox()">x</button>
+                        <button id="closeDialog" onclick="closeLightbox()" aria-label="Lightbox-schließen" >x</button>
                     </header>
                     <section>
                         <img id="lightboxImg" src="">
                     </section>
                     <footer>
-                        <nav class="lightbox_pag">
-                            <button class="nav_btn" id="pagStart" onclick="galleryPagStart()"><img
-                                    src="./icons/angles-left-solid-full.svg" class="to_start_btn"></button>
-                            <button class="nav_btn" id="pagPrev" onclick="galleryPagPrev()"><img
-                                    src="./icons/angle-left-solid-full.svg" class="prev_btn"></button>
-                            <p><span id="currentImg"></span> / <span id="totalImg"></span></p>
-                            <button class="nav_btn" id="pagNext" onclick="galleryPagNext()"><img
-                                    src="./icons/angle-right-solid-full.svg" class="next_btn"></button>
-                            <button class="nav_btn" id="pagEnd" onclick="galleryPagEnd()"><img
-                                    src="./icons/angles-right-solid-full.svg" class="to_end_btn"></button>
+                        <nav class="lightbox_pag" aria-label="Bildnavigation">
+                            <button class="nav_btn" id="pagStart" onclick="galleryPagStart()" aria-label="Erstes Bild"><img
+                                    src="./icons/angles-left-solid-full.svg" class="to_start_btn" alt=""></button>
+                            <button class="nav_btn" id="pagPrev" onclick="galleryPagPrev()" aria-label="Vorheriges Bild"><img
+                                    src="./icons/angle-left-solid-full.svg" class="prev_btn" alt=""></button>
+                            <p aria-live="polite"><span id="currentImg"></span> / <span id="totalImg"></span></p>
+                            <button class="nav_btn" id="pagNext" onclick="galleryPagNext()" aria-label="Nächstes Bild"><img
+                                    src="./icons/angle-right-solid-full.svg" class="next_btn" alt=""></button>
+                            <button class="nav_btn" id="pagEnd" onclick="galleryPagEnd()" aria-label="Letztes Bild"><img
+                                    src="./icons/angles-right-solid-full.svg" class="to_end_btn" alt=""></button>
                         </nav>
                     </footer>
                 </div>
@@ -50,13 +51,13 @@
         </section>
     </main>
     <footer class="main_footer">
-        <nav class="footer_nav">
+        <nav class="footer_nav" aria-label="legal links">
             <ul>
                 <li><a href="./pages/impressum.html">Impressum</a></li>
                 <li><a href="./pages/datenschutz.html">Datenschutz</a></li>
             </ul>
         </nav>
-        <p class="copyright">© 2026 - Dalibor Durbas - Boriel Designs</p>
+        <p class="copyright">©2026 - Dalibor Durbas - Boriel Designs</p>
     </footer>
 </body>
 <script src="./js/script.js"></script>
