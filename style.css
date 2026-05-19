@@ -39,7 +39,7 @@
 main {
     flex: 1;
     max-width: var(--content-width-lock);
-    margin: 150px auto;
+    margin: 150px auto 0;
     text-align: center;
 }
 
@@ -220,6 +220,12 @@ button#closeDialog:hover {
 /* ============ Media Querries =============== */
 
 /* Media Mobile */
+
+@media screen and (min-width: 1500px) {
+    .main_header{
+        padding: 10px calc((50dvw - var(--content-width-lock)/2));
+    }    
+}
 
 @media screen and (max-width: 1439px){
 
