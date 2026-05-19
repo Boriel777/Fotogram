@@ -107,7 +107,7 @@ function updateLightbox() {
         dialogImg.onload = () => {
             dialogImg.classList.remove('hidden');
         };
-    }, 215);
+    }, 180);
 }
 
 function galleryPagStart() {
