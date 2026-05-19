@@ -1,37 +1,37 @@
-// ./img Array
+// ./assets/img Array
 
 const compressedImages = [
-    "./img/Compressed/DSC_0.jpg",
-    "./img/Compressed/DSC_1.jpg",
-    "./img/Compressed/DSC_2.jpg",
-    "./img/Compressed/DSC_3.jpg",
-    "./img/Compressed/DSC_4.jpg",
-    "./img/Compressed/DSC_5.jpg",
-    "./img/Compressed/DSC_6.jpg",
-    "./img/Compressed/DSC_7.jpg",
-    "./img/Compressed/DSC_8.jpg",
-    "./img/Compressed/DSC_9.jpg",
-    "./img/Compressed/DSC_10.jpg",
-    "./img/Compressed/DSC_11.jpg",
-    "./img/Compressed/DSC_12.jpg",
-    "./img/Compressed/DSC_13.jpg",
+    "./assets/img/Compressed/DSC_0.jpg",
+    "./assets/img/Compressed/DSC_1.jpg",
+    "./assets/img/Compressed/DSC_2.jpg",
+    "./assets/img/Compressed/DSC_3.jpg",
+    "./assets/img/Compressed/DSC_4.jpg",
+    "./assets/img/Compressed/DSC_5.jpg",
+    "./assets/img/Compressed/DSC_6.jpg",
+    "./assets/img/Compressed/DSC_7.jpg",
+    "./assets/img/Compressed/DSC_8.jpg",
+    "./assets/img/Compressed/DSC_9.jpg",
+    "./assets/img/Compressed/DSC_10.jpg",
+    "./assets/img/Compressed/DSC_11.jpg",
+    "./assets/img/Compressed/DSC_12.jpg",
+    "./assets/img/Compressed/DSC_13.jpg",
 ]
 
 const images = [
-    "./img/DSC_0.jpg",
-    "./img/DSC_1.jpg",
-    "./img/DSC_2.jpg",
-    "./img/DSC_3.jpg",
-    "./img/DSC_4.jpg",
-    "./img/DSC_5.jpg",
-    "./img/DSC_6.jpg",
-    "./img/DSC_7.jpg",
-    "./img/DSC_8.jpg",
-    "./img/DSC_9.jpg",
-    "./img/DSC_10.jpg",
-    "./img/DSC_11.jpg",
-    "./img/DSC_12.jpg",
-    "./img/DSC_13.jpg",
+    "./assets/img/DSC_0.jpg",
+    "./assets/img/DSC_1.jpg",
+    "./assets/img/DSC_2.jpg",
+    "./assets/img/DSC_3.jpg",
+    "./assets/img/DSC_4.jpg",
+    "./assets/img/DSC_5.jpg",
+    "./assets/img/DSC_6.jpg",
+    "./assets/img/DSC_7.jpg",
+    "./assets/img/DSC_8.jpg",
+    "./assets/img/DSC_9.jpg",
+    "./assets/img/DSC_10.jpg",
+    "./assets/img/DSC_11.jpg",
+    "./assets/img/DSC_12.jpg",
+    "./assets/img/DSC_13.jpg",
 ]
 
 const imgAlt = [
@@ -54,7 +54,7 @@ const imgAlt = [
 let currentImgIndex = 0;
 
 function handleGalleryKey(event, i) {
-    if (event.key==='Enter'|| event.key === '') {
+    if (event.key === 'Enter' || event.key === '') {
         event.preventDefault();
         lightboxGallery(i)
     }
@@ -66,10 +66,12 @@ function renderGallery() {
     let wrapper = document.getElementById('galleryWrapper');
     let galleryHTML = '';
     for (let i = 0; i < images.length; i++) {
-        galleryHTML += `<img class="galleryImg" role="button" loading="lazy" tabindex="0" 
-        onclick="lightboxGallery(${i})" 
-        onkeydown="handleGalleryKey(event, ${i})" 
-        src="${compressedImages[i]}" alt="${imgAlt[i]}">`
+        galleryHTML += `
+        <li>
+            <button  onclick="lightboxGallery(${i})" onkeydown="handleGalleryKey(event, ${i})"> 
+            <img class="galleryImg" loading="lazy" src="${compressedImages[i]}" alt="${imgAlt[i]}"> 
+            </button>
+        </li>`
     };
     wrapper.innerHTML = galleryHTML;
 }
@@ -97,13 +99,13 @@ function closeLightbox() {
 function updateLightbox() {
     let dialogImg = document.getElementById('lightboxImg');
     let currentImg = document.getElementById('currentImg');
-    dialogImg.style.opacity = '0';
+    dialogImg.classList.add('hidden');
     setTimeout(() => {
         dialogImg.src = images[currentImgIndex];
         dialogImg.alt = imgAlt[currentImgIndex];
         currentImg.textContent = currentImgIndex + 1;
         dialogImg.onload = () => {
-            dialogImg.style.opacity = '1';
+            dialogImg.classList.remove('hidden');
         };
     }, 215);
 }

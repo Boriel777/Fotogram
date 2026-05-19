@@ -31,8 +31,8 @@
     --content-width-lock: 1440px;
 
     /*timing*/
-    --transition-fast: all .215s ease-in-out;
-    --transition-medium: all .400s ease-in-out;
+    --transition-fast: all .150s ease-in-out;
+    --transition-medium: all .250s ease-in-out;
 }
 
 /* main root css END */
@@ -72,6 +72,16 @@ h2 {
 
 a {
     color: var(--accent-color);
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    appearance: none;
+    background: none;
+    border: none;
 }
 
 /* global elements END */

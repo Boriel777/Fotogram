@@ -103,9 +103,14 @@ main {
 }
 
 #lightboxImg {
-    height: 70dvh;
+    max-height: 70dvh;
+    width: 100%;
     aspect-ratio: auto;
     transition: var(--transition-medium);
+}
+
+#lightboxImg.hidden {
+    opacity: 0;
 }
 
 /* dialog footer Styles */
@@ -211,3 +216,51 @@ button#closeDialog:hover {
 }
 
 /*footer styles END*/
+
+/* ============ Media Querries =============== */
+
+/* Media Mobile */
+
+@media screen and (max-width: 1439px){
+
+    main {
+        width: 100%;
+        padding: 0 1.5rem;
+    }
+
+}
+
+@media screen and ( max-width: 768px ) {
+    
+.deco-font {
+    margin-top:-12px;
+}
+
+.main_footer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.copyright {
+    margin: 0;
+}
+
+#propagation_guard {
+    padding: 50px 15px;
+}
+
+}
+
+@media screen and (max-width: 425px) {
+    .galleryImg{
+        width: 80dvw;
+    }
+}
+
+
+
+/* Media Mobile END */
+
+/* ============ Media Querries END =============== */
