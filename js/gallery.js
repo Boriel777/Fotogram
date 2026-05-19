@@ -78,6 +78,10 @@ function renderGallery() {
 
 window.onload = renderGallery;
 
+function toggleScrolling() {
+    document.body.classList.toggle('no_scrolling');
+};
+
 // lightbox function
 
 function lightboxGallery(i) {
@@ -85,6 +89,7 @@ function lightboxGallery(i) {
     let dialog = document.getElementById('lightbox');
     dialog.showModal();
     updateLightbox();
+    toggleScrolling();
     currentImg.textContent = currentImgIndex + 1;
     totalImg.textContent = images.length
 }
@@ -92,6 +97,7 @@ function lightboxGallery(i) {
 function closeLightbox() {
     let dialog = document.getElementById('lightbox');
     dialog.close();
+    toggleScrolling();
 }
 
 // lightbox navigation
