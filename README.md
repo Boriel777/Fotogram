@@ -58,7 +58,7 @@ Letting the photos speak, with just enough code to get out of the way:
 
 ## 📸 Preview / Demo
 
-- **[Live Demo on GitHub Pages](#)**
+- **[Live Demo on GitHub Pages](https://boriel777.github.io/Fotogram/)**
 
 ---
 
@@ -76,9 +76,9 @@ Letting the photos speak, with just enough code to get out of the way:
 
 I'm Dalibor – Web & Graphic Designer passionate about handcrafted design and clean code. I combine aesthetics, storytelling, and technical skill to craft digital brand experiences.
 
-- 🌐 **[Portfolio / About Me](#)**
-- 💻 **[GitHub Profile](#)**
-- 📩 **[Email](#)**
+- 🌐 **[Portfolio / About Me](https://borieldesigns.myportfolio.com)**
+- 💻 **[GitHub Profile](https://github.com/Boriel777)**
+- 📩 **[Email](mailto:office@boriel-designs.com)**
 
 ---
 
