@@ -52,7 +52,7 @@ Letting the photos speak, with just enough code to get out of the way:
 
 ## 📊 Project Status
 
-> 🚧 In active development
+> Done
 
 ---
 
